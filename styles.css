@@ -1,0 +1,283 @@
+/*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/
+
+.image-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.image-caption {
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  font-size: 0.85em;
+  color: #555;
+  text-align: center;
+}
+/* === Apply shapes to image === */
+
+.image-shape {
+  margin: 10px;
+}
+
+
+.circle-wrapper {
+  border-radius: 50%;
+}
+
+.default-wrapper, .circle-wrapper, .square-wrapper {
+  font-size: 0;
+}
+
+.broken {
+  font-size: var(--font-text-size);
+}
+
+/* .default {
+} */
+
+.circle {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.square {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.heart {
+  aspect-ratio: 1;
+  --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+  -webkit-mask-box-image: var(--_m);
+  mask-border: var(--_m);
+  clip-path: polygon(-42% 0,50% 91%, 142% 0);
+}
+
+.star {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+  );
+}
+
+/* Hide resizers by default */
+.resizer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Show resizers on hover */
+.image-container:hover .resizer {
+  opacity: 1;
+}
+
+/* === Border Radius resizer ===*/
+.resizer.border-radius-handle {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #888;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	cursor: pointer;
+	z-index: 10;
+}
+
+/* === Corner resizers === */
+.resizer.top-left,
+.resizer.bottom-right {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 20;
+  cursor: nwse-resize;
+}
+
+.resizer.top-left {
+  top: 0;
+  left: 0;
+  background:
+    linear-gradient(to bottom right, #4a90e2 50%, transparent 50%);
+}
+
+.resizer.bottom-right {
+  bottom: 0;
+  right: 0;
+  background:
+    linear-gradient(to top left, #4a90e2 50%, transparent 50%);
+}
+
+
+/* === Horizontal resizers ===*/
+.resizer.left,
+.resizer.right {
+  width: 8px;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 4, 255, 0.4);
+  cursor: ew-resize;
+}
+
+.resizer.left {
+  left: -4px;
+}
+
+.resizer.right {
+  right: -4px;
+}
+
+.resizer.top,
+.resizer.bottom {
+  height: 8px;
+  width: 100%;
+  left: 0;
+  background-color: rgba(0, 4, 255, 0.4);
+  cursor: ns-resize;
+}
+
+.resizer.top {
+  top: -4px;
+}
+
+.resizer.bottom {
+  bottom: -4px;
+}
+
+
+/* === Edge resizers in preview mode === */
+div[data-mode="preview"]  .resizer.left,
+div[data-mode="preview"]  .resizer.right {
+  width: 4px;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 4, 255, 0.4);
+  cursor: ew-resize;
+}
+
+div[data-mode="preview"] .resizer.left {
+  left: -1px;
+}
+
+div[data-mode="preview"] .resizer.right {
+  right: -1px;
+}
+
+div[data-mode="preview"] .resizer.top,
+div[data-mode="preview"] .resizer.bottom {
+  height: 4px;
+  width: 100%;
+  left: 0;
+  background-color: rgba(0, 4, 255, 0.4);
+  cursor: ns-resize;
+  position: absolute;
+}
+
+div[data-mode="preview"] .resizer.top {
+  top: -1px;
+}
+
+div[data-mode="preview"] .resizer.bottom {
+  bottom: -1px;
+}
+
+/* === Compress Button Functionality === */
+.markdown-inline-block{
+  display:inline-block !important;
+}
+
+/* === Text Wrap === */
+.textwrap-left {
+  float: left;
+  margin-right: 10px;
+}
+.textwrap-right {
+  float: right;
+  margin-left: 10px;
+}
+.textwrap-none {
+  display: block;
+  clear: both; 
+}
+
+
+/* === Context Menu === */
+.context-menu-wrapper {
+    position: absolute;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: subtle elevation */
+}
+
+.toolkit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.toolkit:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  display: none;
+  z-index: 999;
+}
+
+
+.toolkit:hover .overlay {
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Max 3 items per row */
+  gap: 6px;
+}
+
+.overlay-buttons {
+  display: flex;
+  padding: 6px 10px;
+  margin: 2px 0;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.overlay-buttons:hover {
+  background-color: #d6b3ff; 
+  border-color: #b48aff;
+} 

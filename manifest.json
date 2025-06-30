@@ -1,0 +1,11 @@
+{
+	"id": "simple-image-plugin",
+	"name": "Simple Image",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "A simple Obsidian plugin that allows users to insert and modify images easily.",
+	"author": "Josie",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
