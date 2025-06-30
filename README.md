@@ -47,7 +47,7 @@ This plugin is currently in beta and can be installed via the BRAT plugin:
 
 1. Make sure you have the BRAT plugin installed in Obsidian.
 2. In BRAT settings, click "Add Beta Plugin".
-3. Paste the GitHub repository URL for this plugin: https://github.com/Josie1902/Simple-Image
+3. Paste the GitHub repository URL for this plugin: [https://github.com/Josie1902/Simple-Image](https://github.com/Josie1902/Simple-Image.git)
 4. BRAT will install and track updates automatically.
 5. Enable Simple Image Plugin from the Community Plugins tab in Obsidian.
 
