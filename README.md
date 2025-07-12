@@ -57,9 +57,13 @@ Use multiple images with inline layout for side-by-side galleries, and switch to
 
 ## 🐞 Known Issues
 
-When using multiple inline-block image containers side-by-side, new paragraphs entered immediately after may not render correctly. This issue does not occur with a single inline image block.
+❌ When using multiple inline-block image containers side-by-side, new paragraphs entered immediately after may not render correctly. This issue does not occur with a single inline image block.
 
-Workaround: use block layout mode or insert a manual break element after the inline group.
+✔️ Workaround: use block layout mode or insert a manual break element after the inline group.
+
+❌ Incompatibility with backlinks for url redirect.
+
+✔️ Workaround: Copy obsidian url of the page into `redirectUrl`.
 
 ## 🚀 Future Development
 
