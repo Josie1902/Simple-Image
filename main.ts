@@ -101,19 +101,6 @@ export default class MyPlugin extends Plugin {
 				});
 			}
 
-			// const image = wrapper.createEl('img', {
-			// 	attr: {
-			// 		class: attributes.applyShape || 'default',
-			// 		alt: imageDescriptionText,
-			// 		src: imageUrl,
-			// 		style: `width: ${width};
-			// 				height: ${height};
-			// 				text-align: ${attributes.align || 'center'};
-			// 				border-radius: ${borderRadius};
-			// 				`
-			// 	}
-			// });
-
 			const shouldLink = attributes.redirectUrl && attributes.redirectUrl !== 'none';
 
 			const anchorContainer = shouldLink
